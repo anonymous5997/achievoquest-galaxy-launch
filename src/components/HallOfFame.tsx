@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, Medal, Award, Star } from "lucide-react";
 
-const HallOfFame = () => {
+ const HallOfFame = () => {
   const topPerformers = [
     {
       name: "Arjun Patel",

@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useEffect } from "react";
 import { 
   X, 
   Rocket, 
@@ -28,7 +29,14 @@ const ISROModal = ({ isOpen, onClose }: ISROModalProps) => {
     "Certificate of participation from ISRO",
     "All expenses covered trip package"
   ];
-
+    useEffect(() => {
+      if (isOpen) {
+        const timer = setTimeout(() => {
+          onClose();
+        }, 5000); // 5 seconds
+        return () => clearTimeout(timer);
+      }
+  }, [isOpen, onClose]);
   const eligibilityCriteria = [
     "Top 100 performers in AchievoQuest Olympiads",
     "Minimum 90% score in Science or Mathematics",
@@ -240,10 +248,12 @@ const ISROModal = ({ isOpen, onClose }: ISROModalProps) => {
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button variant="hero" size="lg" className="min-w-[200px]">
-                      <Rocket className="mr-2 h-5 w-5" />
-                      Start Learning Now
-                    </Button>
+                    <a href="#contact">
+                      <Button variant="hero" size="lg" className="min-w-[200px]">
+                        <Rocket className="mr-2 h-5 w-5" />
+                        Get Started
+                      </Button>
+                    </a>
                     <Button variant="cosmic" size="lg" className="min-w-[200px]">
                       View Requirements
                     </Button>
