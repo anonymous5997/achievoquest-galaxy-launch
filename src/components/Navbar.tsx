@@ -50,17 +50,6 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* CTA Button */}
-          <motion.div
-            className="hidden md:block"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Button variant="hero" size="sm">
-              Start Learning
-            </Button>
-          </motion.div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -100,11 +89,6 @@ const Navbar = () => {
                   {item.name}
                 </motion.a>
               ))}
-              <div className="pt-2">
-                <Button variant="hero" size="sm" className="w-full">
-                  Start Learning
-                </Button>
-              </div>
             </div>
           </motion.div>
         )}
