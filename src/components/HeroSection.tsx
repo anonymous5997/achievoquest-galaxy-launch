@@ -58,7 +58,7 @@ const HeroSection = () => {
       ))}
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -130,11 +130,21 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button variant="hero" size="lg" className="min-w-[200px]">
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="min-w-[200px]"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <Rocket className="mr-2 h-5 w-5" />
-              Start Learning Now
+              Get Started
             </Button>
-            <Button variant="cosmic" size="lg" className="min-w-[200px]">
+            <Button 
+              variant="cosmic" 
+              size="lg" 
+              className="min-w-[200px]"
+              onClick={() => document.getElementById('subjects')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Explore Subjects
             </Button>
           </motion.div>
