@@ -1,12 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import SubjectsSection from "@/components/SubjectsSection";
+import HallOfFame from "@/components/HallOfFame";
+import Gallery from "@/components/Gallery";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import ISROModal from "@/components/ISROModal";
 
 const Index = () => {
+  const [showISROModal, setShowISROModal] = useState(false);
+
+  useEffect(() => {
+    // Show ISRO modal after a delay when page loads
+    const timer = setTimeout(() => {
+      setShowISROModal(true);
+    }, 3000); // Show after 3 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <HeroSection />
+      <SubjectsSection />
+      <HallOfFame />
+      <Gallery />
+      <ContactSection />
+      <Footer />
+      <ISROModal 
+        isOpen={showISROModal} 
+        onClose={() => setShowISROModal(false)} 
+      />
     </div>
   );
 };
