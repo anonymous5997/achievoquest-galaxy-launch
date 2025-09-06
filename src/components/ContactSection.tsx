@@ -34,13 +34,30 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
-    // Reset form
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbylYDdy4aka1yF8pzlaeEIrR3slXXfg6mQPQB10U0RbooC_3mzVF0q32EB-Xv7v4gaQ/exec", {
+      method: "POST",
+      mode: "no-cors",  // 👈 Important
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    // With no-cors, you can't read response, so assume success
+    alert("✅ Message sent successfully!");
     setFormData({ name: "", email: "", phone: "", message: "" });
-  };
+
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    alert("⚠️ Something went wrong.");
+  }
+};
+
+
 
   const contactInfo = [
     {
