@@ -218,13 +218,93 @@ import { Trophy, Medal, Award, Star } from "lucide-react";
           ))}
         </motion.div>
 
+        {/* Benefits Section */}
+        <motion.div
+          className="mt-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              <span className="bg-gradient-nebula bg-clip-text text-transparent">
+                Benefits of AchievoQuest Olympiads
+              </span>
+            </h3>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              Discover how participating in AchievoQuest Olympiads transforms students' academic journey and opens doors to incredible opportunities.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: "🧠",
+                title: "Enhanced Problem-Solving Skills",
+                description: "Develop critical thinking and analytical abilities through challenging problems that go beyond regular curriculum.",
+                highlight: "90% improvement in logical reasoning"
+              },
+              {
+                icon: "💪",
+                title: "Boosted Confidence",
+                description: "Build unshakeable confidence through systematic preparation and exposure to competitive environment.",
+                highlight: "Students report 85% confidence increase"
+              },
+              {
+                icon: "🏆",
+                title: "National-Level Recognition",
+                description: "Gain prestigious recognition through certificates, medals, and rankings at state and national levels.",
+                highlight: "Over 5,000 awards distributed annually"
+              },
+              {
+                icon: "💰",
+                title: "Scholarship Opportunities",
+                description: "Access exclusive scholarships and financial aid for further education based on Olympiad performance.",
+                highlight: "₹50+ lakhs in scholarships awarded"
+              },
+              {
+                icon: "🎯",
+                title: "School Representation",
+                description: "Represent your school at inter-school competitions and bring laurels to your institution.",
+                highlight: "500+ schools actively participating"
+              },
+              {
+                icon: "🌟",
+                title: "Future Opportunities",
+                description: "Open doors to prestigious institutes, competitions, and career paths in STEM fields.",
+                highlight: "75% participants pursue STEM careers"
+              }
+            ].map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                className="group"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02, y: -5 }}
+              >
+                <div className="h-full p-6 bg-card/60 backdrop-blur-sm rounded-lg border border-border/50 hover:border-primary/30 transition-all duration-300">
+                  <div className="text-4xl mb-4">{benefit.icon}</div>
+                  <h4 className="text-xl font-bold text-foreground mb-3">{benefit.title}</h4>
+                  <p className="text-foreground/80 mb-4 leading-relaxed">{benefit.description}</p>
+                  <div className="bg-primary/10 border border-primary/20 rounded-lg p-3">
+                    <p className="text-sm font-semibold text-primary">{benefit.highlight}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Bottom Message */}
         <motion.div
           className="text-center mt-16 p-8 bg-card/30 backdrop-blur-sm rounded-lg border border-border/50"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
           <Trophy className="h-12 w-12 text-star-gold mx-auto mb-4" />
           <h3 className="text-2xl font-bold text-foreground mb-4">

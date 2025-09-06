@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import SubjectsSection from "@/components/SubjectsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import ISROSection from "@/components/ISROSection";
 import HallOfFame from "@/components/HallOfFame";
 import Gallery from "@/components/Gallery";
 import ContactSection from "@/components/ContactSection";
@@ -25,6 +27,8 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <SubjectsSection />
+      <TestimonialsSection />
+      <ISROSection onOpenModal={() => setShowISROModal(true)} />
       <HallOfFame />
       <Gallery />
       <ContactSection />
