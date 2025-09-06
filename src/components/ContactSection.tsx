@@ -23,7 +23,7 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
+    phone: "",
     message: ""
   });
 
@@ -39,7 +39,7 @@ const ContactSection = () => {
     // Handle form submission logic here
     console.log("Form submitted:", formData);
     // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   const contactInfo = [
@@ -148,14 +148,15 @@ const ContactSection = () => {
                   
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                      <FileText className="h-4 w-4" />
-                      Subject *
+                      <Phone className="h-4 w-4" />
+                      Phone Number *
                     </label>
                     <Input
-                      name="subject"
-                      value={formData.subject}
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="What's this about?"
+                      placeholder="+91 9876543210"
                       required
                       className="bg-background/50 border-border focus:border-primary"
                     />
