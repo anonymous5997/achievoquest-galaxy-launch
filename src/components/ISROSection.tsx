@@ -30,7 +30,7 @@ const ISROSection = ({ onOpenModal }: ISROSectionProps) => {
   ];
 
   const criteria = [
-    "Top 100 performers in Olympiads",
+    "Top Olympiad Performers from Across States",
     "Minimum 90% score in Science/Math",
     "Active platform participation"
   ];
@@ -51,7 +51,7 @@ const ISROSection = ({ onOpenModal }: ISROSectionProps) => {
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-nebula bg-clip-text text-transparent">
-              Win a Trip to ISRO
+              Win a Learning Trip to ISRO
             </span>
           </h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
@@ -193,8 +193,8 @@ const ISROSection = ({ onOpenModal }: ISROSectionProps) => {
           <Card className="bg-card/60 backdrop-blur-sm border-border/50 p-6 text-center">
             <Calendar className="h-8 w-8 text-primary mx-auto mb-3" />
             <h4 className="font-bold text-foreground mb-2">Duration</h4>
-            <p className="text-foreground/80">3 Days, 2 Nights</p>
-            <p className="text-sm text-foreground/60 mt-1">April 15-17, 2024</p>
+            <p className="text-foreground/80">The schedule will be announced soon</p>
+            {/* <p className="text-sm text-foreground/60 mt-1">April 15-17, 2024</p> */}
           </Card>
           
           <Card className="bg-card/60 backdrop-blur-sm border-border/50 p-6 text-center">
@@ -207,8 +207,8 @@ const ISROSection = ({ onOpenModal }: ISROSectionProps) => {
           <Card className="bg-card/60 backdrop-blur-sm border-border/50 p-6 text-center">
             <Users className="h-8 w-8 text-primary mx-auto mb-3" />
             <h4 className="font-bold text-foreground mb-2">Participants</h4>
-            <p className="text-foreground/80">50 Students</p>
-            <p className="text-sm text-foreground/60 mt-1">Top performers only</p>
+            {/* <p className="text-foreground/80">50 Students</p> */}
+            <p className="text-sm text-foreground/60 mt-1">Top Performers Only</p>
           </Card>
         </motion.div>
 
@@ -225,8 +225,7 @@ const ISROSection = ({ onOpenModal }: ISROSectionProps) => {
             Your Space Adventure Awaits
           </h3>
           <p className="text-foreground/80 max-w-2xl mx-auto mb-6">
-            This exclusive opportunity is reserved for our most dedicated students. Excel in your Olympiad 
-            preparation and earn your chance to explore the wonders of space science at ISRO.
+            This exclusive opportunity is reserved for our most dedicated achievers. Excel in the AchievoQuest Olympiad and earn your chance to explore the wonders of space science at ISRO.
           </p>
           <Button 
             variant="hero" 

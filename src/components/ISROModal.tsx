@@ -38,10 +38,9 @@ const ISROModal = ({ isOpen, onClose }: ISROModalProps) => {
       }
   }, [isOpen, onClose]);
   const eligibilityCriteria = [
-    "Top 100 performers in AchievoQuest Olympiads",
+    "Top Olympiad Performers from Across States",
     "Minimum 90% score in Science or Mathematics",
-    "Active participation in platform activities",
-    "Completed at least 3 subject modules"
+    "Active participation in platform",
   ];
 
   return (
@@ -153,7 +152,7 @@ const ISROModal = ({ isOpen, onClose }: ISROModalProps) => {
                         <Calendar className="h-5 w-5 text-primary" />
                         <div>
                           <p className="font-semibold text-foreground">Date</p>
-                          <p className="text-foreground/70">April 15-17, 2024</p>
+                          <p className="text-foreground/70">The schedule will be announced soon</p>
                         </div>
                       </div>
                       
@@ -169,7 +168,7 @@ const ISROModal = ({ isOpen, onClose }: ISROModalProps) => {
                         <Users className="h-5 w-5 text-primary" />
                         <div>
                           <p className="font-semibold text-foreground">Participants</p>
-                          <p className="text-foreground/70">Limited to 50 students</p>
+                          <p className="text-foreground/70">Top Performers Only</p>
                         </div>
                       </div>
                       
@@ -177,7 +176,7 @@ const ISROModal = ({ isOpen, onClose }: ISROModalProps) => {
                         <Clock className="h-5 w-5 text-primary" />
                         <div>
                           <p className="font-semibold text-foreground">Duration</p>
-                          <p className="text-foreground/70">3 Days, 2 Nights</p>
+                          <p className="text-foreground/70">The schedule will be announced soon</p>
                         </div>
                       </div>
                     </div>
@@ -254,9 +253,9 @@ const ISROModal = ({ isOpen, onClose }: ISROModalProps) => {
                         Get Started
                       </Button>
                     </a>
-                    <Button variant="cosmic" size="lg" className="min-w-[200px]">
+                    {/* <Button variant="cosmic" size="lg" className="min-w-[200px]">
                       View Requirements
-                    </Button>
+                    </Button> */}
                   </div>
                   
                   <p className="text-xs text-foreground/60 mt-4">

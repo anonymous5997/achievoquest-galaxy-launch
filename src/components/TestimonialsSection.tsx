@@ -5,75 +5,76 @@ import { Quote, Star, School, Users, Award } from "lucide-react";
 const TestimonialsSection = () => {
   const schoolTestimonials = [
     {
-      school: "St. Mary's International School",
-      principal: "Dr. Sarah Johnson",
-      location: "Mumbai",
-      testimonial: "AchievoQuest has transformed our students' approach to Olympiad preparation. The comprehensive curriculum and engaging teaching methods have resulted in a 40% increase in our students' performance.",
+      school: "Parents Pride Public School",
+      principal: "Mr. Asish Bisoye",
+      location: "Nabarangapur, Odisha",
+      testimonial: "Participating in AchievoQuest Olympiads has transformed our students’ outlook towards academics. Their performance has improved by 40%, and they now approach challenges with greater enthusiasm.",
       achievements: "15 Gold Medals in National Olympiads",
       students: 450,
       rating: 5,
       logo: "🏫"
     },
     {
-      school: "Delhi Public School",
-      principal: "Mr. Rajesh Gupta",
-      location: "Delhi",
-      testimonial: "The platform's innovative teaching methodology and dedicated faculty support have made our partnership with AchievoQuest incredibly successful. Our students love the interactive learning experience.",
-      achievements: "22 International Olympiad Qualifiers",
+      school: "St. Xavier's High School",
+      principal: "Mr. Biswajit Sikka",
+      location: "Raygada, Odisha",
+      testimonial: "It was a pleasure to be part of the AchievoQuest Olympiad. The event was well-organized, student-friendly, and motivating for our learners. Our students showcased outstanding performance. The seamless coordination and support from the AchievoQuest team made the process smooth and enjoyable. This initiative has truly boosted our students’ academic confidence.",
+      achievements: "State Level Champions in Mathematics",
       students: 680,
       rating: 5,
       logo: "🎓"
     },
     {
-      school: "Kendriya Vidyalaya",
-      principal: "Mrs. Priya Sharma",
-      location: "Bangalore",
+      school: "St. Anne's Convent School",
+      principal: "Mr. Sr. Barchman",
+      location: "Baripada, Odisha",
       testimonial: "AchievoQuest's structured approach to competitive exam preparation has been instrumental in developing our students' analytical thinking and problem-solving skills.",
       achievements: "95% Success Rate in Regional Olympiads",
       students: 520,
       rating: 5,
       logo: "📚"
     },
-    {
-      school: "Ryan International School",
-      principal: "Dr. Amit Patel",
-      location: "Pune",
-      testimonial: "The quality of content and the personalized attention each student receives through AchievoQuest is exceptional. We've seen remarkable improvement in our students' confidence levels.",
-      achievements: "Top 3 School in State Rankings",
-      students: 380,
-      rating: 5,
-      logo: "🌟"
-    },
-    {
-      school: "DAV Public School",
-      principal: "Ms. Kavitha Reddy",
-      location: "Chennai",
-      testimonial: "Our collaboration with AchievoQuest has elevated our school's academic standards. The comprehensive study materials and expert guidance have been game-changers.",
-      achievements: "18 National Level Winners",
-      students: 425,
-      rating: 5,
-      logo: "🏆"
-    },
-    {
-      school: "Modern English School",
-      principal: "Mr. Vikram Singh",
-      location: "Jaipur",
-      testimonial: "AchievoQuest's holistic approach to education goes beyond just Olympiad preparation. It develops critical thinking and fosters a love for learning in our students.",
-      achievements: "Top Performer in Regional Zone",
-      students: 310,
-      rating: 5,
-      logo: "🎯"
-    }
+    // {
+    //   school: "Ryan International School",
+    //   principal: "Dr. Amit Patel",
+    //   location: "Pune",
+    //   testimonial: "The quality of content and the personalized attention each student receives through AchievoQuest is exceptional. We've seen remarkable improvement in our students' confidence levels.",
+    //   achievements: "Top 3 School in State Rankings",
+    //   students: 380,
+    //   rating: 5,
+    //   logo: "🌟"
+    // },
+    // {
+    //   school: "DAV Public School",
+    //   principal: "Ms. Kavitha Reddy",
+    //   location: "Chennai",
+    //   testimonial: "Our collaboration with AchievoQuest has elevated our school's academic standards. The comprehensive study materials and expert guidance have been game-changers.",
+    //   achievements: "18 National Level Winners",
+    //   students: 425,
+    //   rating: 5,
+    //   logo: "🏆"
+    // },
+    // {
+    //   school: "Modern English School",
+    //   principal: "Mr. Vikram Singh",
+    //   location: "Jaipur",
+    //   testimonial: "AchievoQuest's holistic approach to education goes beyond just Olympiad preparation. It develops critical thinking and fosters a love for learning in our students.",
+    //   achievements: "Top Performer in Regional Zone",
+    //   students: 310,
+    //   rating: 5,
+    //   logo: "🎯"
+    // }
   ];
 
   const stats = [
-    { icon: School, value: "500+", label: "Partner Schools" },
-    { icon: Users, value: "50,000+", label: "Students Enrolled" },
+    { icon: School, value: "100+", label: "Partner Schools" },
+    { icon: Users, value: "5,000+", label: "Students Enrolled" },
     { icon: Award, value: "95%", label: "Success Rate" },
     { icon: Star, value: "4.9", label: "Average Rating" }
   ];
 
   return (
+    <section id="testimonials">
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -201,6 +202,7 @@ const TestimonialsSection = () => {
           </p>
         </motion.div>
       </div>
+    </section>
     </section>
   );
 };

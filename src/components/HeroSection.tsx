@@ -13,7 +13,7 @@ const HeroSection = () => {
   }));
 
   const stats = [
-    { icon: Users, value: "50,000+", label: "Students" },
+    { icon: Users, value: "5,000+", label: "Students" },
     { icon: Award, value: "95%", label: "Success Rate" },
     { icon: BookOpen, value: "5", label: "Subjects" },
     { icon: Star, value: "4.9", label: "Rating" },
@@ -120,7 +120,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Master Mathematics, English, Science, General Knowledge, and Aptitude with our comprehensive online learning platform designed for academic excellence.
+            Unleash Your Potential with AchievoQuest’s Olympiad Exams in Mathematics, English, Science, General Knowledge, and Aptitude.
           </motion.p>
 
           {/* CTA Buttons */}

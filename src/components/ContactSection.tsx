@@ -63,19 +63,19 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+91 9876543210", "+91 8765432109"],
+      details: ["+91 7377173717", "+91 7377170717"],
       color: "text-green-400"
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@achievoquest.com", "support@achievoquest.com"],
+      details: ["info@achievoquest.com"],
       color: "text-blue-400"
     },
     {
       icon: MapPin,
       title: "Address",
-      details: ["123 Education Hub", "New Delhi, India 110001"],
+      details: ["Bhubaneswar", "Odisha , India 751006"],
       color: "text-red-400"
     },
     {

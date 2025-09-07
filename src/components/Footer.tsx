@@ -54,7 +54,7 @@ const Footer = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <div className="max-w-7xl mx-auto text-center">
+        {/* <div className="max-w-7xl mx-auto text-center">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
             <span className="bg-gradient-nebula bg-clip-text text-transparent">
               Stay Updated with AchievoQuest
@@ -74,7 +74,7 @@ const Footer = () => {
               Subscribe
             </Button>
           </div>
-        </div>
+        </div> */}
       </motion.div>
 
       {/* Main Footer Content */}
@@ -102,7 +102,7 @@ const Footer = () => {
               <div className="space-y-2 text-sm text-foreground/70">
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4" />
-                  <span>+91 9876543210</span>
+                  <span>+91 7377173717</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4" />
@@ -110,7 +110,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
-                  <span>New Delhi, India</span>
+                  <span>Bhubaneswar , Odisha, India</span>
                 </div>
               </div>
             </motion.div>
