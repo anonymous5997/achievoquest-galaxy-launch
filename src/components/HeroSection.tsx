@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Rocket, Star, Award, Users, BookOpen, Trophy, Target, Zap, Orbit, Sparkles, Satellite } from "lucide-react";
+import { Rocket, Star, Award, Users, BookOpen, Trophy, Target, Zap } from "lucide-react";
 import galaxyBg from "@/assets/galaxy-hero-bg.jpg";
-import studentReal from "@/assets/student-real.jpg";
+import studentHero from "@/assets/student-hero.png";
 
 const HeroSection = () => {
   const floatingElements = Array.from({ length: 20 }, (_, i) => ({
@@ -23,116 +23,38 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage: `url(${galaxyBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
     >
-      {/* Light Space Background with Stars */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-purple-100/20 to-indigo-100/30"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-deep-space/60"></div>
       
-      {/* Animated Space Elements */}
-      <div className="absolute inset-0">
-        {/* Large Floating Rocket */}
-        <motion.div
-          className="absolute top-20 right-10 text-primary/30"
-          animate={{ 
-            y: [0, -30, 0],
-            rotate: [0, 5, -5, 0]
-          }}
-          transition={{ 
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <Rocket size={120} className="transform rotate-45" />
-        </motion.div>
-
-        {/* Orbiting Satellite */}
-        <motion.div
-          className="absolute top-32 left-20 text-secondary/40"
-          animate={{ 
-            rotate: 360
-          }}
-          transition={{ 
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          <Satellite size={60} />
-        </motion.div>
-
-        {/* Multiple Sparkles */}
-        {Array.from({ length: 15 }, (_, i) => (
-          <motion.div
-            key={`sparkle-${i}`}
-            className="absolute text-accent/50"
-            style={{
-              left: `${10 + (i % 5) * 20}%`,
-              top: `${15 + (i % 3) * 25}%`,
-            }}
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.3, 1, 0.3],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 4,
-              delay: i * 0.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <Sparkles size={20 + (i % 3) * 10} />
-          </motion.div>
-        ))}
-
-        {/* Floating Orbit Icons */}
-        {Array.from({ length: 6 }, (_, i) => (
-          <motion.div
-            key={`orbit-${i}`}
-            className="absolute text-primary/20"
-            style={{
-              right: `${5 + (i % 2) * 30}%`,
-              top: `${20 + (i % 3) * 20}%`,
-            }}
-            animate={{
-              rotate: [0, 360],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 12 + i * 2,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          >
-            <Orbit size={40 + (i % 2) * 20} />
-          </motion.div>
-        ))}
-      </div>
-      
-      {/* Enhanced Floating Stars */}
+      {/* Floating Stars */}
       {floatingElements.map((element) => (
         <motion.div
           key={element.id}
-          className="absolute text-yellow-400/60"
+          className="absolute text-star-gold"
           style={{
             left: `${element.x}%`,
             top: `${element.y}%`,
           }}
           animate={{
-            y: [0, -30, 0],
-            opacity: [0.2, 1, 0.2],
-            scale: [1, 1.3, 1],
-            rotate: [0, 180, 360],
+            y: [0, -20, 0],
+            opacity: [0.3, 1, 0.3],
           }}
           transition={{
-            duration: 5 + element.delay,
+            duration: 4,
             delay: element.delay,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         >
-          <Star size={element.size * 2} className="fill-current drop-shadow-sm" />
+          <Star size={element.size} className="fill-current" />
         </motion.div>
       ))}
 
@@ -244,9 +166,9 @@ const HeroSection = () => {
               }}
             >
               <img
-                src={studentReal}
+                src={studentHero}
                 alt="Student achieving success in Olympiad"
-                className="w-80 h-96 object-cover rounded-2xl shadow-2xl border-4 border-white/50"
+                className="w-80 h-auto max-w-full drop-shadow-2xl"
               />
               
               {/* Floating Achievement Badge */}
