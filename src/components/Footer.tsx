@@ -174,7 +174,7 @@ const Footer = () => {
               </ul>
             </motion.div>
 
-            {/* Social & Contact */}
+            {/* Social & Contact
             <motion.div
               className="space-y-6"
               initial={{ opacity: 0, y: 20 }}
@@ -203,7 +203,7 @@ const Footer = () => {
                 <p className="mb-2">Follow us for updates and tips!</p>
                 <p>Join our community of 50,000+ learners</p>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </div>

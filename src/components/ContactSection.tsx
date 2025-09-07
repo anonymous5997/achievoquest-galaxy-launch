@@ -87,10 +87,10 @@ const ContactSection = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, name: "Facebook", url: "#", color: "hover:text-blue-500" },
-    { icon: Twitter, name: "Twitter", url: "#", color: "hover:text-sky-400" },
-    { icon: Instagram, name: "Instagram", url: "#", color: "hover:text-pink-500" },
-    { icon: Youtube, name: "YouTube", url: "#", color: "hover:text-red-500" }
+    // { icon: Facebook, name: "Facebook", url: "#", color: "hover:text-blue-500" },
+    // { icon: Twitter, name: "Twitter", url: "#", color: "hover:text-sky-400" },
+    // { icon: Instagram, name: "Instagram", url: "#", color: "hover:text-pink-500" },
+    // { icon: Youtube, name: "YouTube", url: "#", color: "hover:text-red-500" }
   ];
 
   return (
@@ -250,7 +250,7 @@ const ContactSection = () => {
               ))}
             </div>
 
-            {/* Social Media */}
+            {/* Social Media
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -278,10 +278,10 @@ const ContactSection = () => {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </motion.div> */}
 
             {/* Quick Contact */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -305,7 +305,7 @@ const ContactSection = () => {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>
