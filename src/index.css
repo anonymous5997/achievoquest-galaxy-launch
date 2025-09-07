@@ -68,25 +68,26 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* Light mode (keeping galaxy theme consistent) */
+  /* Light mode - Making background lighter for space theme */
   .light {
-    --background: 220 20% 14%;
-    --foreground: 210 40% 98%;
-    --card: 225 25% 18%;
-    --card-foreground: 210 40% 98%;
-    --popover: 225 25% 18%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 240 100% 75%;
-    --primary-foreground: 220 20% 14%;
-    --secondary: 260 50% 50%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 225 15% 25%;
-    --muted-foreground: 215 20% 70%;
-    --accent: 280 100% 65%;
-    --accent-foreground: 220 20% 14%;
-    --border: 225 15% 30%;
-    --input: 225 15% 30%;
-    --ring: 240 100% 75%;
+    --background: 210 50% 98%;
+    --foreground: 220 20% 14%;
+    --card: 210 40% 95%;
+    --card-foreground: 220 20% 14%;
+    --popover: 210 40% 95%;
+    --popover-foreground: 220 20% 14%;
+    --primary: 240 100% 60%;
+    --primary-foreground: 210 50% 98%;
+    --secondary: 260 40% 65%;
+    --secondary-foreground: 210 50% 98%;
+    --muted: 210 20% 90%;
+    --muted-foreground: 215 20% 40%;
+    --accent: 280 80% 65%;
+    --accent-foreground: 210 50% 98%;
+    --border: 210 20% 85%;
+    --input: 210 20% 85%;
+    --ring: 240 100% 60%;
+    --deep-space: 210 30% 96%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
