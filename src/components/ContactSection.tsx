@@ -23,7 +23,7 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    subject: "",
     message: ""
   });
 
@@ -34,30 +34,13 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-
-  try {
-    await fetch("https://script.google.com/macros/s/AKfycbylYDdy4aka1yF8pzlaeEIrR3slXXfg6mQPQB10U0RbooC_3mzVF0q32EB-Xv7v4gaQ/exec", {
-      method: "POST",
-      mode: "no-cors",  // 👈 Important
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    // With no-cors, you can't read response, so assume success
-    alert("✅ Message sent successfully!");
-    setFormData({ name: "", email: "", phone: "", message: "" });
-
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    alert("⚠️ Something went wrong.");
-  }
-};
-
-
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log("Form submitted:", formData);
+    // Reset form
+    setFormData({ name: "", email: "", subject: "", message: "" });
+  };
 
   const contactInfo = [
     {
@@ -87,10 +70,10 @@ const ContactSection = () => {
   ];
 
   const socialLinks = [
-    // { icon: Facebook, name: "Facebook", url: "#", color: "hover:text-blue-500" },
-    // { icon: Twitter, name: "Twitter", url: "#", color: "hover:text-sky-400" },
-    // { icon: Instagram, name: "Instagram", url: "#", color: "hover:text-pink-500" },
-    // { icon: Youtube, name: "YouTube", url: "#", color: "hover:text-red-500" }
+    { icon: Facebook, name: "Facebook", url: "#", color: "hover:text-blue-500" },
+    { icon: Twitter, name: "Twitter", url: "#", color: "hover:text-sky-400" },
+    { icon: Instagram, name: "Instagram", url: "#", color: "hover:text-pink-500" },
+    { icon: Youtube, name: "YouTube", url: "#", color: "hover:text-red-500" }
   ];
 
   return (
@@ -165,15 +148,14 @@ const ContactSection = () => {
                   
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                      <Phone className="h-4 w-4" />
-                      Phone Number *
+                      <FileText className="h-4 w-4" />
+                      Subject *
                     </label>
                     <Input
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
+                      name="subject"
+                      value={formData.subject}
                       onChange={handleInputChange}
-                      placeholder="+91 9876543210"
+                      placeholder="What's this about?"
                       required
                       className="bg-background/50 border-border focus:border-primary"
                     />
@@ -250,7 +232,7 @@ const ContactSection = () => {
               ))}
             </div>
 
-            {/* Social Media
+            {/* Social Media */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -278,10 +260,10 @@ const ContactSection = () => {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div> */}
+            </motion.div>
 
             {/* Quick Contact */}
-            {/* <motion.div
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -305,7 +287,7 @@ const ContactSection = () => {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div> */}
+            </motion.div>
           </motion.div>
         </div>
       </div>
