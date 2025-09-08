@@ -239,7 +239,7 @@ const ContactSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Card className="bg-card/60 backdrop-blur-sm border-border/50">
+              {/* <Card className="bg-card/60 backdrop-blur-sm border-border/50">
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-4 text-center">Follow Us</h3>
                   <div className="flex justify-center space-x-4">
@@ -259,7 +259,7 @@ const ContactSection = () => {
                     ))}
                   </div>
                 </CardContent>
-              </Card>
+              </Card> */}
             </motion.div>
 
             {/* Quick Contact */}
@@ -269,7 +269,7 @@ const ContactSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <Card className="bg-gradient-nebula/10 backdrop-blur-sm border-primary/30">
+              {/* <Card className="bg-gradient-nebula/10 backdrop-blur-sm border-primary/30">
                 <CardContent className="p-6 text-center">
                   <h3 className="font-semibold text-foreground mb-3">Need Immediate Help?</h3>
                   <p className="text-foreground/70 text-sm mb-4">
@@ -286,7 +286,7 @@ const ContactSection = () => {
                     </Button>
                   </div>
                 </CardContent>
-              </Card>
+              </Card> */}
             </motion.div>
           </motion.div>
         </div>

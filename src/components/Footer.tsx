@@ -96,8 +96,7 @@ const Footer = () => {
                 </span>
               </div>
               <p className="text-foreground/70 text-sm leading-relaxed">
-                Empowering students to excel in Olympiads through comprehensive online learning, 
-                expert guidance, and innovative educational experiences.
+                Unleash Your Potential with AchievoQuest’s Olympiad Exams in Mathematics, English, Science, General Knowledge, and Aptitude.
               </p>
               <div className="space-y-2 text-sm text-foreground/70">
                 <div className="flex items-center gap-2">
@@ -182,7 +181,7 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h3 className="text-lg font-semibold text-foreground">Connect With Us</h3>
+              {/* <h3 className="text-lg font-semibold text-foreground">Connect With Us</h3>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -198,11 +197,11 @@ const Footer = () => {
                     <social.icon className="h-5 w-5" />
                   </motion.a>
                 ))}
-              </div>
-              <div className="text-sm text-foreground/70">
+              </div> */}
+              {/* <div className="text-sm text-foreground/70">
                 <p className="mb-2">Follow us for updates and tips!</p>
                 <p>Join our community of 50,000+ learners</p>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>
