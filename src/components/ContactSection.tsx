@@ -1,12 +1,13 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
   Clock,
   Send,
   MessageCircle,
@@ -15,31 +16,53 @@ import {
   Facebook,
   Twitter,
   Instagram,
-  Youtube
+  Youtube,
 } from "lucide-react";
-import { useState } from "react";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
-    message: ""
+    Phone: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbx8k30zrsWF5COjJ9Yqs18hHSqo23mP3Zm68gyTVhAmen0VMUAz8cx7uIPzxQnDIKug/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.Phone,
+            message: formData.message,
+          }),
+        }
+      );
+
+      setFormData({ name: "", email: "", Phone: "", message: "" });
+      setShowPopup(true);
+      setTimeout(() => setShowPopup(false), 3000);
+    } catch (error) {
+      console.error("Error!", error);
+      alert("Something went wrong.");
+    }
   };
 
   const contactInfo = [
@@ -47,33 +70,53 @@ const ContactSection = () => {
       icon: Phone,
       title: "Phone",
       details: ["+91 7377173717", "+91 7377170717"],
-      color: "text-green-400"
+      color: "text-green-400",
     },
     {
       icon: Mail,
       title: "Email",
       details: ["info@achievoquest.com"],
-      color: "text-blue-400"
+      color: "text-blue-400",
     },
     {
       icon: MapPin,
       title: "Address",
       details: ["Bhubaneswar", "Odisha , India 751006"],
-      color: "text-red-400"
+      color: "text-red-400",
     },
     {
       icon: Clock,
       title: "Working Hours",
       details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Sat: 10:00 AM - 4:00 PM"],
-      color: "text-purple-400"
-    }
+      color: "text-purple-400",
+    },
   ];
 
   const socialLinks = [
-    { icon: Facebook, name: "Facebook", url: "#", color: "hover:text-blue-500" },
-    { icon: Twitter, name: "Twitter", url: "#", color: "hover:text-sky-400" },
-    { icon: Instagram, name: "Instagram", url: "#", color: "hover:text-pink-500" },
-    { icon: Youtube, name: "YouTube", url: "#", color: "hover:text-red-500" }
+    {
+      icon: Facebook,
+      name: "Facebook",
+      url: "#",
+      color: "hover:text-blue-500",
+    },
+    {
+      icon: Twitter,
+      name: "Twitter",
+      url: "#",
+      color: "hover:text-sky-400",
+    },
+    {
+      icon: Instagram,
+      name: "Instagram",
+      url: "#",
+      color: "hover:text-pink-500",
+    },
+    {
+      icon: Youtube,
+      name: "YouTube",
+      url: "#",
+      color: "hover:text-red-500",
+    },
   ];
 
   return (
@@ -93,7 +136,8 @@ const ContactSection = () => {
             </span>
           </h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-            Have questions about our platform or need guidance? We're here to help you start your journey to academic excellence.
+            Have questions about our platform or need guidance? We're here to
+            help you start your journey to academic excellence.
           </p>
         </motion.div>
 
@@ -116,7 +160,7 @@ const ContactSection = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                      <label className="text-sm font-medium flex items-center gap-2">
                         <User className="h-4 w-4" />
                         Name *
                       </label>
@@ -130,7 +174,7 @@ const ContactSection = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                      <label className="text-sm font-medium flex items-center gap-2">
                         <Mail className="h-4 w-4" />
                         Email *
                       </label>
@@ -145,24 +189,25 @@ const ContactSection = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                    <label className="text-sm font-medium flex items-center gap-2">
                       <FileText className="h-4 w-4" />
-                      Subject *
+                      Phone Number *
                     </label>
                     <Input
-                      name="subject"
-                      value={formData.subject}
+                      name="Phone"
+                      type="tel"
+                      value={formData.Phone}
                       onChange={handleInputChange}
-                      placeholder="What's this about?"
+                      placeholder="Your Phone Number"
                       required
                       className="bg-background/50 border-border focus:border-primary"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                    <label className="text-sm font-medium flex items-center gap-2">
                       <MessageCircle className="h-4 w-4" />
                       Message *
                     </label>
@@ -176,13 +221,8 @@ const ContactSection = () => {
                       className="bg-background/50 border-border focus:border-primary resize-none"
                     />
                   </div>
-                  
-                  <Button 
-                    type="submit" 
-                    variant="hero" 
-                    size="lg" 
-                    className="w-full"
-                  >
+
+                  <Button type="submit" variant="hero" size="lg" className="w-full">
                     <Send className="mr-2 h-5 w-5" />
                     Send Message
                   </Button>
@@ -191,7 +231,7 @@ const ContactSection = () => {
             </Card>
           </motion.div>
 
-          {/* Contact Information */}
+          {/* Contact Info, Social & Quick Contact */}
           <motion.div
             className="space-y-8"
             initial={{ opacity: 0, x: 50 }}
@@ -214,11 +254,15 @@ const ContactSection = () => {
                   <Card className="bg-card/60 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-300">
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
-                        <div className={`p-3 rounded-full bg-background/50 ${info.color} group-hover:scale-110 transition-transform duration-200`}>
+                        <div
+                          className={`p-3 rounded-full bg-background/50 ${info.color} group-hover:scale-110 transition-transform duration-200`}
+                        >
                           <info.icon className="h-6 w-6" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-foreground mb-2">{info.title}</h3>
+                          <h3 className="font-semibold text-foreground mb-2">
+                            {info.title}
+                          </h3>
                           {info.details.map((detail, idx) => (
                             <p key={idx} className="text-foreground/70 text-sm">
                               {detail}
@@ -233,7 +277,7 @@ const ContactSection = () => {
             </div>
 
             {/* Social Media */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -241,7 +285,9 @@ const ContactSection = () => {
             >
               {/* <Card className="bg-card/60 backdrop-blur-sm border-border/50">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-4 text-center">Follow Us</h3>
+                  <h3 className="font-semibold text-foreground mb-4 text-center">
+                    Follow Us
+                  </h3>
                   <div className="flex justify-center space-x-4">
                     {socialLinks.map((social, index) => (
                       <motion.a
@@ -260,20 +306,23 @@ const ContactSection = () => {
                   </div>
                 </CardContent>
               </Card> */}
-            </motion.div>
+            {/* </motion.div> */} 
 
             {/* Quick Contact */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              {/* <Card className="bg-gradient-nebula/10 backdrop-blur-sm border-primary/30">
+              <Card className="bg-gradient-nebula/10 backdrop-blur-sm border-primary/30">
                 <CardContent className="p-6 text-center">
-                  <h3 className="font-semibold text-foreground mb-3">Need Immediate Help?</h3>
+                  <h3 className="font-semibold text-foreground mb-3">
+                    Need Immediate Help?
+                  </h3>
                   <p className="text-foreground/70 text-sm mb-4">
-                    Our support team is available to assist you with any questions about courses, enrollment, or technical issues.
+                    Our support team is available to assist you with any
+                    questions about courses, enrollment, or technical issues.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button variant="cosmic" size="sm" className="flex-1">
@@ -286,11 +335,39 @@ const ContactSection = () => {
                     </Button>
                   </div>
                 </CardContent>
-              </Card> */}
-            </motion.div>
+              </Card>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>
+
+      {/* ✅ Success Popup */}
+      <AnimatePresence>
+        {showPopup && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
+          >
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 50, opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="bg-white dark:bg-gray-900 text-center p-8 rounded-2xl shadow-2xl max-w-sm w-full"
+            >
+              <h3 className="text-xl font-bold text-green-500 mb-2">
+                ✅ Thank You!
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                We will get back to you soon.
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
